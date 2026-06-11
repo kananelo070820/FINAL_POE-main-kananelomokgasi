@@ -1,0 +1,13 @@
+{
+  "name": "WEDE5020 POE",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-20-bookworm",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ritwickdey.LiveServer",
+        "esbenp.prettier-vscode"
+      ]
+    }
+  },
+  "postCreateCommand": "echo 'Codespace ready for WEDE5020 POE'"
+}
