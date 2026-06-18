@@ -106,13 +106,13 @@ started with the planning of the Final POE for Web development
 
 ## Screenshots
 ### Desktop
-Add screenshots here.
+(<Assets/Screenshot 2026-05-28 144513.png>)
 
 ### Tablet
-Add screenshots here.
+(<Assets/Screenshot 2026-05-28 144108.png>)
 
 ### Mobile
-Add screenshots here.
+(<Assets/Screenshot 2026-05-28 144051.png>)
 
 ## References
 HubSpot (2023) Website marketing statistics. Available at: https://www.hubspot.com (Accessed: 18 April 2026).
