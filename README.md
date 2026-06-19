@@ -106,14 +106,14 @@ started with the planning of the Final POE for Web development
 
 ## Screenshots
 ### Desktop
-(<Assets/Screenshot 2026-05-28 144513.png>)
+
+![desktop view ](<Assets/Screenshot 2026-05-28 144513.png>)
 
 ### Tablet
 (<Assets/Screenshot 2026-05-28 144108.png>)
-
+![screenshot of tablet view](<Assets/Screenshot 2026-05-28 144108.png>)
 ### Mobile
-(<Assets/Screenshot 2026-05-28 144051.png>)
-
+![screenshot of mobile](<Assets/Screenshot 2026-05-28 144051.png>)
 ## References
 HubSpot (2023) Website marketing statistics. Available at: https://www.hubspot.com (Accessed: 18 April 2026).
 World Health Organization (2022) Physical activity guidelines. Available at: https://www.who.int (Accessed: 18 April 2026).
