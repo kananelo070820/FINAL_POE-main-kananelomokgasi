@@ -7,7 +7,7 @@
 - **Lecturer:** Thabo Mofokeng
 - **Selected Organisation:** Peak Performance Fitness
 - **Repository URL:** [Paste GitHub repository link here]
-- **Deployed Website URL:** [Paste deployment link here in Part 3]
+- **Deployed Website URL:** [ https://kananelo070820.github.io/FINAL_POE-main-kananelomokgasi/ ]
 
 ## Project Overview
 Peak Performance Fitness is a fitness business established in 2021 that focuses on helping individuals improve their health and well-being. The business provides personalised workout plans, group training sessions, and nutritional guidance to ensure clients achieve long-term fitness goals.
@@ -127,4 +127,5 @@ Netlify (2024) Hosting services. Available at: https://www.netlify.com (Accessed
 ## Autograding Feedback
 This project may be checked automatically in GitHub Classroom on every push.
 Use the Actions or autograding results to see which requirements still need improvement.
+
 [wireframe of the assignment](peak_performance_wireframe.pdf)
