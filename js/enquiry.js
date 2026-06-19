@@ -250,12 +250,12 @@ document.addEventListener("DOMContentLoaded", () => {
   // Clicking any image opens it in a full-screen lightbox overlay.
 
   const galleryImages = [
-    { src: "images/gym_floor.jpg",       alt: "Main gym floor with equipment" },
-    { src: "images/dumbbells.jpg",       alt: "Dumbbell rack" },
-    { src: "images/bench_press.jpg",     alt: "Bench press station" },
-    { src: "images/treadmill.jpg",       alt: "Treadmill cardio area" },
-    { src: "images/squat_rack.jpg",      alt: "Squat rack" },
-    { src: "images/spin_bike.jpg",       alt: "Spin bike studio" }
+    { src: "IMAGES/gym-floor.jpg",       alt: "Main gym floor with equipment" },
+    { src: "IMAGES/dumbbells.jpg",       alt: "Dumbbell rack" },
+    { src: "IMAGES/bench-press.jpg",     alt: "Bench press station" },
+    { src: "IMAGES/gym.jpg",       alt: "Cardio area" },
+    { src: "IMAGES/pull-up-bar.jpg",      alt: "Pull-up bar" },
+    { src: "IMAGES/gym-mats.jpg",       alt: "Gym mats" }
   ];
 
   const gallerySection = document.createElement("section");

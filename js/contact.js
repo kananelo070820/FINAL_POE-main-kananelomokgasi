@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
       btn.type = "button";
       btn.className = "loc-btn" + (i === 0 ? " active" : "");
       btn.dataset.city = city;
-      btn.textContent = `${locationData[city].emoji} ${city}`;
+      btn.textContent = ` ${city}`;
       btn.addEventListener("click", () => showLocation(city));
       strip.appendChild(btn);
     });
