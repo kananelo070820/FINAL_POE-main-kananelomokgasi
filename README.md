@@ -6,7 +6,7 @@
 - **Module:** Web Development (Introduction) - WEDE5020
 - **Lecturer:** Thabo Mofokeng
 - **Selected Organisation:** Peak Performance Fitness
-- **Repository URL:** [Paste GitHub repository link here]
+- **Repository URL:** [ (https://github.com/kananelo070820/FINAL_POE-main-kananelomokgasi.git) ]
 - **Deployed Website URL:** [ https://kananelo070820.github.io/FINAL_POE-main-kananelomokgasi/ ]
 
 ## Project Overview
