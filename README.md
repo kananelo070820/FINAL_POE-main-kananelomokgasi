@@ -127,3 +127,4 @@ Netlify (2024) Hosting services. Available at: https://www.netlify.com (Accessed
 ## Autograding Feedback
 This project may be checked automatically in GitHub Classroom on every push.
 Use the Actions or autograding results to see which requirements still need improvement.
+[wireframe of the assignment](peak_performance_wireframe.pdf)
