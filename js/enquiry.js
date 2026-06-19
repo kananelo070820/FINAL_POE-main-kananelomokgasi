@@ -244,4 +244,96 @@ document.addEventListener("DOMContentLoaded", () => {
     main.appendChild(section);
   }
 
+
+  // 6. LIGHTBOX GALLERY
+  // Builds a gym image gallery below the FAQ section.
+  // Clicking any image opens it in a full-screen lightbox overlay.
+
+  const galleryImages = [
+    { src: "images/gym_floor.jpg",       alt: "Main gym floor with equipment" },
+    { src: "images/dumbbells.jpg",       alt: "Dumbbell rack" },
+    { src: "images/bench_press.jpg",     alt: "Bench press station" },
+    { src: "images/treadmill.jpg",       alt: "Treadmill cardio area" },
+    { src: "images/squat_rack.jpg",      alt: "Squat rack" },
+    { src: "images/spin_bike.jpg",       alt: "Spin bike studio" }
+  ];
+
+  const gallerySection = document.createElement("section");
+  gallerySection.className = "gallery-section";
+  gallerySection.innerHTML = `<h2>Our Facilities</h2>
+    <p class="gallery-subtitle">Click any image to view it in full screen.</p>
+    <div class="gallery-grid"></div>`;
+
+  const grid = gallerySection.querySelector(".gallery-grid");
+
+  galleryImages.forEach((img, index) => {
+    const item = document.createElement("div");
+    item.className = "gallery-item";
+    item.innerHTML = `<img src="${img.src}" alt="${img.alt}" loading="lazy" data-index="${index}" />
+      <div class="gallery-overlay"><span>&#128269; View</span></div>`;
+    item.addEventListener("click", () => openLightbox(index));
+    grid.appendChild(item);
+  });
+
+  if (main) main.appendChild(gallerySection);
+
+  // Build the lightbox overlay once and reuse
+  const lightbox = document.createElement("div");
+  lightbox.id = "lightbox";
+  lightbox.setAttribute("role", "dialog");
+  lightbox.setAttribute("aria-modal", "true");
+  lightbox.setAttribute("aria-label", "Image viewer");
+  lightbox.innerHTML = `
+    <button id="lb-close" aria-label="Close image viewer">&times;</button>
+    <button id="lb-prev" aria-label="Previous image">&#10094;</button>
+    <div class="lb-content">
+      <img id="lb-img" src="" alt="" />
+      <p id="lb-caption"></p>
+    </div>
+    <button id="lb-next" aria-label="Next image">&#10095;</button>`;
+  document.body.appendChild(lightbox);
+
+  let currentIndex = 0;
+
+  function openLightbox(index) {
+    currentIndex = index;
+    updateLightbox();
+    lightbox.classList.add("open");
+    document.body.style.overflow = "hidden";
+    document.getElementById("lb-close").focus();
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove("open");
+    document.body.style.overflow = "";
+  }
+
+  function updateLightbox() {
+    const img = galleryImages[currentIndex];
+    document.getElementById("lb-img").src = img.src;
+    document.getElementById("lb-img").alt = img.alt;
+    document.getElementById("lb-caption").textContent = img.alt;
+    document.getElementById("lb-prev").style.visibility = currentIndex === 0 ? "hidden" : "visible";
+    document.getElementById("lb-next").style.visibility = currentIndex === galleryImages.length - 1 ? "hidden" : "visible";
+  }
+
+  document.getElementById("lb-close").addEventListener("click", closeLightbox);
+  document.getElementById("lb-prev").addEventListener("click", () => {
+    if (currentIndex > 0) { currentIndex--; updateLightbox(); }
+  });
+  document.getElementById("lb-next").addEventListener("click", () => {
+    if (currentIndex < galleryImages.length - 1) { currentIndex++; updateLightbox(); }
+  });
+
+  // Close on backdrop click
+  lightbox.addEventListener("click", e => { if (e.target === lightbox) closeLightbox(); });
+
+  // Keyboard navigation
+  document.addEventListener("keydown", e => {
+    if (!lightbox.classList.contains("open")) return;
+    if (e.key === "Escape")      closeLightbox();
+    if (e.key === "ArrowLeft"  && currentIndex > 0) { currentIndex--; updateLightbox(); }
+    if (e.key === "ArrowRight" && currentIndex < galleryImages.length - 1) { currentIndex++; updateLightbox(); }
+  });
+
 }); // end DOMContentLoaded

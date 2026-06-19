@@ -61,14 +61,32 @@ document.addEventListener("DOMContentLoaded", () => {
       const d = locationData[city];
       document.querySelectorAll(".loc-btn").forEach(b =>
         b.classList.toggle("active", b.dataset.city === city));
+
+      // Build an embedded Google Maps iframe using the address as query
+      const encodedAddress = encodeURIComponent(d.address);
+      const mapEmbedUrl = `https://www.google.com/maps?q=${encodedAddress}&output=embed`;
+
       panel.innerHTML = `
         <div class="loc-detail">
-          <p><span class="loc-label"> Address</span><span>${d.address}</span></p>
-          <p><span class="loc-label"> Phone</span><span>${d.phone}</span></p>
-          <p><span class="loc-label"> Hours</span><span>${d.hours}</span></p>
+          <p><span class="loc-label">Address</span><span>${d.address}</span></p>
+          <p><span class="loc-label">Phone</span><span>${d.phone}</span></p>
+          <p><span class="loc-label">Hours</span><span>${d.hours}</span></p>
           <a class="loc-map-link" href="${d.mapUrl}" target="_blank" rel="noopener">
-            Open in Google Maps 
+            Open in Google Maps
           </a>
+          <div class="map-embed-wrapper">
+            <iframe
+              class="loc-map-iframe"
+              src="${mapEmbedUrl}"
+              width="100%"
+              height="300"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="${city} gym location map"
+            ></iframe>
+          </div>
         </div>`;
     }
     showLocation(Object.keys(locationData)[0]);
